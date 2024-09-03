@@ -7,6 +7,10 @@ edition = "2021"
 name = "is-even"
 path = "src/bin/is_even.rs"
 
+[[bin]]
+name = "reward_distribution"
+path = "src/bin/reward_distribution.rs"
+
 [workspace]
 
 [dependencies]
