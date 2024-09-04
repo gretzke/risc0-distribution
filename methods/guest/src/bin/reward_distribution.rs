@@ -4,12 +4,12 @@
 use std::collections::HashMap;
 use std::{io::Read, ops::Div, usize};
 
-use alloy_primitives::{hex, keccak256, Address, B256, U256};
+use alloy_primitives::{/*hex,*/ keccak256, Address, B256, U256};
 use alloy_sol_types::sol;
 
 use risc0_zkvm::guest::env;
+// use std::env::args;
 
-// use risc0_zkvm::guest::env;
 // Generates Rust bindings for Solidity structs, enums and type aliases.
 sol! {
     #[allow(missing_docs)]
@@ -22,7 +22,7 @@ sol! {
 
 fn main() {
     // // Read the input data from command-line arguments
-    // let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = args().collect();
     // if args.len() < 2 {
     //     println!("Please provide a hexadecimal input as an argument.");
     //     return;

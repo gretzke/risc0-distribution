@@ -43,11 +43,12 @@ contract RewardDistributionTest is RiscZeroCheats, Test {
         address[] memory attesters = new address[](2);
         attesters[0] = 0x4444444444444444444444444444444444444444;
         attesters[1] = 0x5555555555555555555555555555555555555555;
-        Leaf[] memory leaves = new Leaf[](4);
+        Leaf[] memory leaves = new Leaf[](2);
         leaves[0] = Leaf(0x6666666666666666666666666666666666666666, 4660);
         leaves[1] = Leaf(0x7777777777777777777777777777777777777777, 22136);
 
-        (, bytes memory seal) = prove(Elf.IS_EVEN_PATH, abi.encode(reward, oldRoot, attesters, newRoot, leaves));
+        (, bytes memory seal) =
+            prove(Elf.REWARD_DISTRIBUTION_PATH, abi.encode(reward, oldRoot, newRoot, attesters, leaves));
 
         vm.deal(address(this), reward);
         rewardDistribution.setRoot{value: reward}(newRoot, seal);
