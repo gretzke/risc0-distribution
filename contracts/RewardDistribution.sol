@@ -27,8 +27,9 @@ contract RewardDistribution {
     bytes32 public root;
     mapping(address => uint256) public withdrawnRewards;
 
-    constructor(IRiscZeroVerifier _verifier) {
+    constructor(IRiscZeroVerifier _verifier, bytes32 _root) {
         verifier = _verifier;
+        root = _root;
     }
 
     function setRoot(bytes32 newRoot, bytes calldata seal) public payable {

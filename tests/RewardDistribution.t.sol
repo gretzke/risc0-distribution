@@ -33,7 +33,8 @@ contract RewardDistributionTest is RiscZeroCheats, Test {
 
     function setUp() public {
         IRiscZeroVerifier verifier = deployRiscZeroVerifier();
-        rewardDistribution = new RewardDistribution(verifier);
+        rewardDistribution =
+            new RewardDistribution(verifier, 0x855a7c002948bb381cca3c500d252862d922ff2d7919ae419e2c46df42db6a54);
     }
 
     function test_SetNewRoot() public {
